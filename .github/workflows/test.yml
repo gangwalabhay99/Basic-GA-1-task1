@@ -2,6 +2,7 @@ name: lint test and deploy
 on: push
 jobs:
   test:
+    needs: lint
     runs-on: ubuntu-latest
     steps:
       - name: read directory
