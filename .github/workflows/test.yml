@@ -23,10 +23,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: deploy
-        uses: echo "deploying...."
+        run: echo "deploying...."
 
   lint:
     runs-on: ubuntu-latest
     steps:
       - name: read directory
-        uses: echo "lint"
+        run: echo "lint"
