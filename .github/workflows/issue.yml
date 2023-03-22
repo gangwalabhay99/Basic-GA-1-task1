@@ -5,8 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: output event detail in shell
-        run: echo "{{toJSON(github)}}"
+        run: echo "${{toJSON(github)}}"
       - name: username of the user that triggered the initial workflow run
-        run: echo "{{github.actor}}"
+        run: echo "${{github.actor}}"
       - name: output event detail in shell
-        run: echo "{{toJSON(github.event)}}"
+        run: echo "${{toJSON(github.event)}}"
