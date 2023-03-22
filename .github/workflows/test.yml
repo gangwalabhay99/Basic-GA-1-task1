@@ -2,7 +2,7 @@ name: lint test and deploy
 on: push
 jobs:
   test:
-    uses: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: read directory
         uses: actions/checkout@v3
@@ -18,14 +18,15 @@ jobs:
       - name: test
         run: npm test
 
-    deploy:
-      needs: test
-      uses: ubuntu-latest
-      steps:
-        - name: deploy
-          uses: echo "deploying...."
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy
+        uses: echo "deploying...."
 
-    lint:
-      uses: ubuntu-latest
-      steps:
-        - name: read directory
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: read directory
+        uses: echo "lint"
