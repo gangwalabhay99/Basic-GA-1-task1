@@ -1,5 +1,5 @@
 name: output
-on: ["push", "workflow_dispatch"]
+on: issues
 jobs:
   event:
     runs-on: ubuntu-latest
@@ -8,3 +8,5 @@ jobs:
         run: echo "{{toJSON(github)}}"
       - name: username of the user that triggered the initial workflow run
         run: echo "{{github.actor}}"
+      - name: output event detail in shell
+        run: echo "{{toJSON(github.event)}}"
