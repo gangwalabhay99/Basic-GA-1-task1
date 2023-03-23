@@ -1,5 +1,21 @@
 name: lint test and deploy
-on: push
+on:
+  pull_request:
+    types:
+      - opened
+      - assigned
+      - labeled
+    branches:
+      - main
+      - master
+
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+      - master
+
 jobs:
   test:
     needs: lint
